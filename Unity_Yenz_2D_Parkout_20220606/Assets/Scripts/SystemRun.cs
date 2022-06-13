@@ -28,11 +28,21 @@ namespace YEN
         #endregion
 
         #region 事件:程式入口
+
+        private void Awake()
+        {
+            ani = GetComponent<Animator>();
+        }
+
         private void Start()
         {
             print("Wellcome to the Running Game!");
         }
 
+        private void Update()
+        {
+            print("<color=yellow>事件更新中</color>");
+        }
 
 
 
