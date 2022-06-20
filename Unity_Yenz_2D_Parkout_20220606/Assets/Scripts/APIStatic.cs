@@ -8,7 +8,8 @@ public class APIStatic : MonoBehaviour
         /// <summary>
         /// API Stati靜態使用方式
         /// </summary>
-
+        private Vector3 a = new Vector3(1, 1, 1);
+        private Vector3 b = new Vector3(22, 22, 22);
 
         private void Start()
         {
@@ -24,7 +25,20 @@ public class APIStatic : MonoBehaviour
 
             #region 練習題
             print("camera number is " + Camera.allCamerasCount);
-            print("應用平台"+ Application.isConsolePlatform);
+            print("應用平台"+ Application.platform);
+
+            Physics.sleepThreshold = 10;
+            print("睡眠臨界值" + Physics.sleepThreshold);
+
+            Time.timeScale = 0.5f;
+            print("時間大小" + Time.timeScale);
+
+            print("999.99去掉小數點四捨五入"+Mathf.Round(999.99f));
+
+            float distance = Vector3.Distance(a,b);
+            print("<color=yellow>距離" + distance + "</color>");
+
+            Application.OpenURL("https://unity.com/");
 
 
                 #endregion
@@ -37,8 +51,9 @@ public class APIStatic : MonoBehaviour
             #endregion
 
             #region 練習題
-            print("輸入任意鍵" + Input.anyKey);
-
+            //print("輸入任意鍵" + Input.anyKeyDown);
+            //print("遊戲經過時間" + Time.timeSinceLevelLoad);
+            print("<color=red>是否按下空白鍵" + Input.GetKeyDown(KeyCode.Space)+"</color>");
 
             #endregion
 
