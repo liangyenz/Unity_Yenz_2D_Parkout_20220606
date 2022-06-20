@@ -22,7 +22,15 @@ namespace YEN
 
         #region 功能:實作該系統的複雜方法
 
-
+        //
+        /// <summary>
+        /// 跑步功能
+        /// </summary>
+        private void Run()
+        {
+            print("跑步中");
+            rig.velocity = new Vector2(speedRun, rig.velocity.y);//speedRun之前設定的跑步速度，rig.velocity.y加回角色原來的地心引力設定
+        }
 
 
         #endregion
@@ -32,16 +40,24 @@ namespace YEN
         private void Awake()
         {
             ani = GetComponent<Animator>();
+            rig = GetComponent<Rigidbody2D>();
         }
 
         private void Start()
         {
-            print("Wellcome to the Running Game!");
+            //print("Wellcome to the Running Game!");
+
+            
         }
 
         private void Update()
         {
-            print("<color=yellow>事件更新中</color>");
+            // print("<color=yellow>事件更新中</color>");
+
+            //呼叫方法:方法名稱(對應的引數);
+            Run(); //呼叫private void Run
+            
+
         }
 
 
