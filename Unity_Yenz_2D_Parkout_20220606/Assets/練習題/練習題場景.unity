@@ -467,7 +467,6 @@ GameObject:
   - component: {fileID: 1172558720}
   - component: {fileID: 1172558719}
   - component: {fileID: 1172558723}
-  - component: {fileID: 1172558724}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -570,27 +569,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1172558724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172558718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c90162e589149c49b3cdf894032edfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 0}
-  cube2: {fileID: 0}
-  cube3: {fileID: 0}
-  sphere: {fileID: 0}
-  sphere2: {fileID: 0}
-  capsule: {fileID: 0}
-  capsule2: {fileID: 0}
-  capsuleobjects: {fileID: 0}
-  came: {fileID: 0}
 --- !u!1 &1197052672
 GameObject:
   m_ObjectHideFlags: 0

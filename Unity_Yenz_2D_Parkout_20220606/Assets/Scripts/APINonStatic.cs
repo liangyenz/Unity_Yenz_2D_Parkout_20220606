@@ -38,11 +38,12 @@ namespace YEN
         private Rigidbody capsule2;
 
 
-        [SerializeField]
-        private CapsuleCollider2D capsuleobjects;
+       
         [SerializeField]
         private Camera came;
-        /* [SerializeField]*/
+
+
+        [SerializeField]
         private Transform startPoint;//增加起點圖的欄位
 
 
@@ -93,7 +94,12 @@ namespace YEN
             #endregion
 
 
-             void Update()
+        }
+
+
+
+
+        private void Update()
             {
 
 
@@ -118,14 +124,14 @@ namespace YEN
 
 
 
-                capsule2.AddForce(new Vector3(0, 20, 0));
+                capsule2.AddForce(new Vector3(0,30,0));
 
                 #endregion
             }
 
 
 
-        } 
+        
     }
 
 
