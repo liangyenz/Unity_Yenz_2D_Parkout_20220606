@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace YEN
+namespace Yen
 {
     /// <summary>
     /// 跑酷遊戲
@@ -11,8 +11,7 @@ namespace YEN
         #region 資料:保存系統需要的資料
         [SerializeField, Header("跑步速度"), Tooltip("這是角色的跑步速度"), Range(0,35)]
         private float speedRun = 3.5f;
-        [SerializeField, Header("跳躍高度"), Tooltip("這是角色的跳躍高度"), Range(0,350)]
-        private float heightJump = 350;
+        
         private Animator ani;
         private Rigidbody2D rig;
 
@@ -60,6 +59,16 @@ namespace YEN
 
         }
 
+
+        private void OnEnable()
+        {
+            
+        }
+
+        private void OnDisable()
+        {
+            rig.velocity = Vector2.zero;
+        }
 
 
         #endregion

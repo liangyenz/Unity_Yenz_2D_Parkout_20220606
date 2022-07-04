@@ -51,7 +51,7 @@ namespace YEN
         private void Start()
         {
 
-            /* #region 上課
+             /*#region 上課
              //非靜態屬性
              //1.取得 非靜態屬性
              //  語法: 欄位名稱.非靜態屬性
@@ -76,7 +76,7 @@ namespace YEN
 
              #endregion*/
 
-            #region 練習題
+            /*#region 練習題
 
             print("攝影機深度" + came.depth);
 
@@ -91,7 +91,7 @@ namespace YEN
 
 
 
-            #endregion
+            #endregion*/
 
 
         }
@@ -111,7 +111,7 @@ namespace YEN
 
 
 
-                #region 練習題
+               /* #region 練習題
 
                 cube2.RotateAround(sphere.transform.position, Vector3.back, 20 * Time.deltaTime);
 
@@ -126,7 +126,7 @@ namespace YEN
 
                 capsule2.AddForce(new Vector3(0,30,0));
 
-                #endregion
+                #endregion*/
             }
 
 
