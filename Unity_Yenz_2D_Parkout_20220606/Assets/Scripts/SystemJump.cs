@@ -15,11 +15,7 @@ public class SystemJump : MonoBehaviour
         [SerializeField, Header("跳躍高度"), Tooltip("這是角色的跳躍高度"), Range(0, 3000)]
         private float heightJump = 350;
 
-        private Animator ani;
-        private Rigidbody2D rig;
-
-        private bool clickJump;//增加clickJump欄位，在Debug模式下會顯示
-        private bool isGround;
+        
 
         [SerializeField, Header("檢查地板尺寸")]
         private Vector3 v3CheckGroundSize = Vector3.one;
@@ -32,6 +28,22 @@ public class SystemJump : MonoBehaviour
 
         [SerializeField, Header("檢查地板圖層")]
         private LayerMask layerCheckGround;
+
+        [SerializeField, Header("跳躍動畫參數")]
+        private string nameJump = "開關跳";//Animator>Parameters的參數名稱
+
+        [SerializeField, Header("跳躍音效")]
+        private AudioClip soundJump;
+
+
+
+        private Animator ani;
+        private Rigidbody2D rig;
+        private AudioSource aud;
+
+        private bool clickJump;//增加clickJump欄位，在Debug模式下會顯示
+        private bool isGround;
+       
 
 
 
@@ -64,6 +76,8 @@ public class SystemJump : MonoBehaviour
                 
                 rig.AddForce(new Vector2(0, heightJump));//AddForce推力，heightJump跳多高
                 clickJump = false;
+
+                aud.PlayOneShot(soundJump, Random.Range(0.7f, 1.5f));//跳躍時播放音效
             }
         }
 
@@ -82,6 +96,10 @@ public class SystemJump : MonoBehaviour
             isGround = hit;
         }
 
+        private void UpdateAnimator()
+        {
+            ani.SetBool(nameJump, !isGround);//(!相反參數)!isGround>與isGround的設定相反
+        }
 
         #endregion
 
@@ -110,6 +128,7 @@ public class SystemJump : MonoBehaviour
         {
             ani = GetComponent<Animator>();
             rig = GetComponent<Rigidbody2D>();
+            aud = GetComponent<AudioSource>();
 
 
         }
@@ -121,6 +140,7 @@ public class SystemJump : MonoBehaviour
 
             JumpKey();
             CheckGround();
+            UpdateAnimator();
 
         }
 

@@ -54,7 +54,7 @@ public class ManagerFinal : MonoBehaviour
         //2.Button on Click 設定此腳本的公開方法
         public void Quit()
         {
-            print("離開遊戲");
+            //print("離開遊戲");
             //只在發布執行檔 電腦與手裝置上有作用
             Application.Quit();
         }
